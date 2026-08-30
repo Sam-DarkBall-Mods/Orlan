@@ -2,7 +2,7 @@ private _uav = cameraOn;
 private _positionATL = getPosATLVisual _uav;
 
 // CURSOR ANGLE VERTICAL MOVEMENT
-private _cursorPicture = uiNameSpace getVariable ["DB_orlanHUD_angle_cursorPicture", controlNull];
+private _cursorPicture = uiNamespace getVariable ["DB_orlanHUD_angle_cursorPicture", controlNull];
 private _cursorMaxH = (ctrlPosition (ctrlParentControlsGroup _cursorPicture)) # 3;
 private _turretY = ([_uav, [0], true] call CBA_fnc_turretDir) # 1;
 private _minElev = getNumber (configFile >> "CfgVehicles" >> typeOf _uav >> "Turrets" >> "MainTurret" >> "minElev");
@@ -12,32 +12,32 @@ _cursorPicture ctrlSetPositionY (linearConversion [_maxElev, _minElev, _turretY,
 _cursorPicture ctrlCommit 0.0;
 
 // CURSOR ANGLE TEXT
-private _cursorMainText = uiNameSpace getVariable ["DB_orlanHUD_angle_mainText", controlNull];
+private _cursorMainText = uiNamespace getVariable ["DB_orlanHUD_angle_mainText", controlNull];
 _cursorMainText ctrlSetText (str(round _turretY));
 
 // ALT
-private _altMainText = uiNameSpace getVariable ["DB_orlanHUD_alt_mainText", controlNull];
+private _altMainText = uiNamespace getVariable ["DB_orlanHUD_alt_mainText", controlNull];
 _altMainText ctrlSetText format ["ВЫС: %1", floor(_uav call CBA_fnc_realHeight)];
 
 // COORDINATES
-private _coordMainText = uiNameSpace getVariable ["DB_orlanHUD_coord_mainText", controlNull];
+private _coordMainText = uiNamespace getVariable ["DB_orlanHUD_coord_mainText", controlNull];
 _coordMainText ctrlSetText format ["КВАДРАТ: %1 %2", floor((_positionATL # 0) / 100), floor((_positionATL # 1) / 100)];
 
 // FUEL
-private _fuelMainText = uiNameSpace getVariable ["DB_orlanHUD_fuel_mainText", controlNull];
+private _fuelMainText = uiNamespace getVariable ["DB_orlanHUD_fuel_mainText", controlNull];
 _fuelMainText ctrlSetText format ["ТОПЛИВО: %1", floor (fuel _uav * 100)];
 
 // LASER
-private _laserMainText = uiNameSpace getVariable ["DB_orlanHUD_laser_mainText", controlNull];
+private _laserMainText = uiNamespace getVariable ["DB_orlanHUD_laser_mainText", controlNull];
 _laserMainText ctrlSetText format ["ЛЦУ: %1", ["ВЫКЛ", "ВКЛ"] select (isLaserOn _uav)];
 
 // STATUS
-private _statusMainText = uiNameSpace getVariable ["DB_orlanHUD_status_mainText", controlNull];
+private _statusMainText = uiNamespace getVariable ["DB_orlanHUD_status_mainText", controlNull];
 _statusMainText ctrlSetText format ["СОСТОЯНИЕ: %1", ["УПРАВЛЯЕМЫЙ", "ПОВРЕЖДЕН"] select (damage _uav >= 0.33)];
 
 // DIRECTION
-private _directionPicture = uiNameSpace getVariable ["DB_orlanHUD_direction_picture", controlNull];
-private _directionMainText = uiNameSpace getVariable ["DB_orlanHUD_direction_mainText", controlNull];
+private _directionPicture = uiNamespace getVariable ["DB_orlanHUD_direction_picture", controlNull];
+private _directionMainText = uiNamespace getVariable ["DB_orlanHUD_direction_mainText", controlNull];
 private _picture = "";
 private _direction = getDirVisual _uav;
 private _laserTarget = laserTarget _uav;
@@ -62,16 +62,16 @@ _directionPicture ctrlSetText _picture;
 _directionMainText ctrlSetText str(floor _direction);
 
 // LASER DISTANCE
-private _laserDistanceMainText = uiNameSpace getVariable ["DB_orlanHUD_laserDistance_mainText", controlNull];
+private _laserDistanceMainText = uiNamespace getVariable ["DB_orlanHUD_laserDistance_mainText", controlNull];
 _laserDistanceMainText ctrlSetText format ["%1", ["ВЫКЛ", format["%1 м.", floor(_uav distance _laserTarget)]] select !(isNull _laserTarget)];
 
 
 // DRONE SPEED
-private _droneSpeedMainText = uiNameSpace getVariable ["DB_orlanHUD_droneSpeed_mainText", controlNull];
+private _droneSpeedMainText = uiNamespace getVariable ["DB_orlanHUD_droneSpeed_mainText", controlNull];
 _droneSpeedMainText ctrlSetText format ["СКОРОСТЬ: %1 КМ/Ч", (floor speed _uav)];
 
 // PITCH
-private _pitchMainText = uiNameSpace getVariable ["DB_orlanHUD_pitch_mainText", controlNull];
+private _pitchMainText = uiNamespace getVariable ["DB_orlanHUD_pitch_mainText", controlNull];
 _pitchMainText ctrlSetText format ["ТАНГАЖ: %1 °", floor((_uav call BIS_fnc_getPitchBank) # 0)];
 
 // FOV

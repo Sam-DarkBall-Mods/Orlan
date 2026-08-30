@@ -9,7 +9,7 @@ class CfgPatches
 			"A3_Drones_F",
 			"A3_Supplies_F_Enoch_Ammoboxes"
 		};
-		requiredVersion=0.1;
+		requiredVersion = 2.22;
 		units[]=
 		{
 			"orlan_tripod_launcher_OPF",

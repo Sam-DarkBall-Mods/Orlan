@@ -8,7 +8,7 @@ class CfgPatches
 			"A3_Data_F_AoW_Loadorder",
 			"orlan_main"
 		};
-		requiredVersion=0.1;
+		requiredVersion = 2.22;
 		units[]={};
 		weapons[]={};
 	};
