@@ -1,4 +1,9 @@
 name = "Orlan 1.0.0";
+picture = "logo128.paa";
+logo = "logo128.paa";
+logoOver = "logo128.paa";
+logoSmall = "logo64.paa";
+overviewPicture = "logo128.paa";
 actionName = "GitHub";
 action = "https://github.com/Sam-DarkBall-Mods/Orlan";
 description = "Orlan - Version 1.0.0";
