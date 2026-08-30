@@ -6,7 +6,11 @@ class CfgPatches
 		requiredAddons[]=
 		{
 			"A3_Data_F_AoW_Loadorder",
-			"orlan_main"
+			"orlan_main",
+			"cba_common",
+			"cba_events",
+			"cba_settings",
+			"cba_xeh"
 		};
 		requiredVersion = 2.22;
 		units[]={};

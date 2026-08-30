@@ -7,7 +7,10 @@ class CfgPatches
 		{
 			"A3_Data_F_AoW_Loadorder",
 			"A3_Drones_F",
-			"A3_Supplies_F_Enoch_Ammoboxes"
+			"A3_Supplies_F_Enoch_Ammoboxes",
+			"cba_common",
+			"cba_ui",
+			"cba_xeh"
 		};
 		requiredVersion = 2.22;
 		units[]=
